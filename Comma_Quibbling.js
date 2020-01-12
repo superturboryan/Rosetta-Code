@@ -31,27 +31,34 @@ function quibble(words) {
     }
 
     if (words.length == 1) {
-        answer.push(`${words[0]}}`)
+        answer.push(`${words[0]}}`) // Add only word and return
         return answer.join("")
     }
 
+    // These last two cases, 2 or 2+, should be joined
+    
     if (words.length == 2) {
-        answer.push(`${words[0]} and ${words[1]}}`)
+        answer.push(`${words[0]} and ${words[1]}}`) // Add both words separated " and ", return
         return answer.join("")
     }
 
     if (words.length > 2) {
+
         words.forEach((word,index) => {
+            // If its the second last word don't add comma
             if (index == words.length-2) {
                 answer.push(`${word}`)
                 return
             }
+            // If its the last word, add "and word", continue for loop
             if (index == words.length-1) {
                 answer.push(` and ${word}}`)
                 return
             }
+            // Otherwise we just add the word and a comma
             answer.push(`${word},`)
         });
+        // Return all the words in the array joined
         return answer.join("")
     }
 }
