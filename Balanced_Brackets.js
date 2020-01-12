@@ -13,18 +13,13 @@ Input	Output
 */
 
 function isBalanced(str) {
-    
     let score = 0
-
     for (let bracket of str.split("")) {
-
         bracket == "[" ? score += 1 : score -= 1
-
         if (score < 0) {
             return false
         }
     }
-
     return score === 0
 }
 
