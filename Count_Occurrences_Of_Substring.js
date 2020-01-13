@@ -24,10 +24,11 @@ function countSubstring(str, subStr) {
             if (str.substring(index,index+length) == subStr) { // Check slice against target subStr
     
                 count += 1 // Incremement count
-                index += length // Increment index to after the slice
+                index += length-1 // Increment index to after the slice
             }
         }
-        else index += 1 // Otherwise just increment index by 1
+        
+        index += 1 // Otherwise just increment index by 1
     }
     return count // Return the count of found subStrings
 }
