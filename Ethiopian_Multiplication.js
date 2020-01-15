@@ -72,16 +72,13 @@ function getDoubles(num,length) {
 }
 
 function eth_mult(a, b) {
-  
     let halfves = getHalves(a)
     let doubles = getDoubles(b,halfves.length)
     let combined = []
     halfves.forEach((num,index) => {
         combined.push([num,doubles[index]])
     });
-
     combined = combined.filter(comb=> comb[0]%2 != 0)
-    
     let answer = 0
     combined.forEach(comb=>{
         if (comb[0]%2!=0) {
